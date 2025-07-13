@@ -528,75 +528,106 @@ gtag("config", "GT-P85WK989");
 		</section>
 		<!--Visit our shop section -->
 	<section class="shop-location-section">
-  <h2>📍 Visit Our Shops</h2>
-  <div class="shop-content-wrapper">
+  <h2>📍 Visit Our Shop</h2>
+  <div class="shop-card">
     
-    <!-- Shop Details -->
-    <div class="shop-details">
-      <h3><a href="https://maps.app.goo.gl/nQFudWna6m5cmP1ZA" target="_blank">Acryliz Investment Ltd – Main Branch</a></h3>
-      <p>Angawa Street, Kisumu</p>
-      <p>📞 <a href="tel:+254723948861">0723 948 861</a></p>
+    <!-- Shop Icon or Image -->
+    <div class="shop-badge">
+      <!-- Optional SVG or Icon -->
+      <img src="/assets/shop-icon.svg" alt="Shop Icon">
     </div>
 
-    <!-- Online Shop -->
-    <div class="shop-actions">
-      <h3><a href="https://wa.me/254721339682?text=Hello%2C%20I%20would%20like%20to%20place%20an%20order%20for%20%3B" target="_blank">🛒 Shop Online</a></h3>
-      <p>Place your order online via WhatsApp</p>
+    <!-- Shop Information -->
+    <div class="shop-info">
+      <h3><a href="https://maps.app.goo.gl/nQFudWna6m5cmP1ZA" target="_blank">Acryliz Investment Ltd – Main Branch</a></h3>
+      <p class="location">📍 Angawa Street, Kisumu</p>
+      <p class="contact">📞 <a href="tel:+254723948861">0723 948 861</a></p>
+
+      <div class="shop-links">
+        <a href="https://wa.me/254721339682?text=Hello%2C%20I%20would%20like%20to%20place%20an%20order%20for%20%3B" target="_blank" class="btn-whatsapp">🛍️ Shop Online</a>
+      </div>
     </div>
   </div>
-
   <style>
 	.shop-location-section {
-  max-width: 1000px;
+  max-width: 800px;
   margin: auto;
-  padding: 60px 20px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-  text-align: center;
+  padding: 60px 30px;
+  background: linear-gradient(to right, #f3f4f6, #e5e7eb);
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  font-family: 'Roboto', sans-serif;
 }
 
 .shop-location-section h2 {
+  text-align: center;
   font-size: 2rem;
-  margin-bottom: 40px;
-  font-family: 'Roboto', sans-serif;
   color: #1f2937;
+  margin-bottom: 40px;
 }
 
-.shop-content-wrapper {
+.shop-card {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
-  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.05);
 }
 
-.shop-details, .shop-actions {
-  flex: 1 1 300px;
-  text-align: left;
+.shop-badge img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: #dbeafe;
+  padding: 10px;
 }
 
-.shop-details h3 a,
-.shop-actions h3 a {
+.shop-info {
+  flex: 1;
+}
+
+.shop-info h3 a {
   font-size: 1.3rem;
+  font-weight: bold;
   color: #155e75;
   text-decoration: none;
-  font-weight: bold;
 }
 
-.shop-details h3 a:hover,
-.shop-actions h3 a:hover {
+.shop-info h3 a:hover {
   text-decoration: underline;
 }
 
-.shop-details p,
-.shop-actions p {
-  font-size: 1rem;
+.shop-info p {
+  margin: 8px 0;
   color: #374151;
-  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.shop-links {
+  margin-top: 15px;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #10b981;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background: #059669;
 }
 
   </style>
 </section>
+
 
 					</div>
 		</div>
