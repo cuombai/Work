@@ -549,10 +549,29 @@ gtag("config", "GT-P85WK989");
     </div>
   </div>
   <style>
+	* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section, div {
+  max-width: 100%;
+}
+
 	.shop-location-section {
-  max-width: 800px;
+  max-width: 100%;
   margin: auto;
-  padding: 60px 30px;
+  padding: 60px 20px;
+  overflow: hidden;
   background: linear-gradient(to right, #f3f4f6, #e5e7eb);
   border-radius: 16px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
@@ -569,13 +588,16 @@ gtag("config", "GT-P85WK989");
 .shop-card {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   gap: 30px;
   background: #ffffff;
   padding: 30px;
   border-radius: 14px;
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
+
 
 .shop-badge img {
   width: 80px;
