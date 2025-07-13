@@ -1027,13 +1027,12 @@ var ekit_config = {"ajaxurl":"https:\/\/blackberryuniforms.co.ke\/wp-admin\/admi
   </div>
 
   <style>
-	.recent-posts-section {
+.recent-posts-section {
   max-width: 1000px;
-  margin: auto;
+  margin: 0 auto;
   padding: 40px 20px;
   background: #f8f9fa;
 }
-
 .slider-heading {
   text-align: center;
   font-size: 2rem;
@@ -1043,12 +1042,17 @@ var ekit_config = {"ajaxurl":"https:\/\/blackberryuniforms.co.ke\/wp-admin\/admi
 
 .slider-wrapper {
   display: flex;
+  justify-content: center; /* Center contents horizontally */
+  align-items: stretch;
   gap: 40px;
-  align-items: center;
+  width: 100%;
+  flex-wrap: wrap; /* Enables wrapping on smaller screens */
 }
 
 .imageSwiper, .textSwiper {
-  flex: 1;
+  flex: 0 1 45%; /* Each takes ~45% width, leaving space between */
+  display: flex;
+  justify-content: center;
 }
 
 .imageSwiper .swiper-slide img {
@@ -1056,16 +1060,15 @@ var ekit_config = {"ajaxurl":"https:\/\/blackberryuniforms.co.ke\/wp-admin\/admi
   height: 100px;
   object-fit: cover;
   border-radius: 8px;
-  margin: auto;
-  display: block;
+  margin: 0 auto;
 }
 
 .post-details {
   background: white;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
 }
 
 .post-details h3 {
