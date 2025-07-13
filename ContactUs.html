@@ -573,15 +573,15 @@ section, div {
   max-width: 100%;
 }
 
-	.shop-location-section {
-  max-width: 100%;
+.shop-location-section {
+  max-width: 1000px;
   margin: auto;
   padding: 60px 20px;
-  overflow: hidden;
   background: linear-gradient(to right, #f3f4f6, #e5e7eb);
   border-radius: 16px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
   font-family: 'Roboto', sans-serif;
+  text-align: center;
 }
 
 .shop-location-section h2 {
@@ -594,14 +594,15 @@ section, div {
 .shop-card {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center; /* centers child items horizontally */
+  align-items: center;     /* centers items vertically if needed */
   gap: 30px;
   background: #ffffff;
   padding: 30px;
   border-radius: 14px;
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.05);
-  width: 100%;
   box-sizing: border-box;
-  overflow: hidden;
+  width: 100%;
 }
 
 
@@ -615,9 +616,9 @@ section, div {
 }
 
 .shop-info {
-  flex: 1;
+  flex: 1 1 300px;
+  text-align: center; /* ensures internal content is centered */
 }
-
 .shop-info h3 a {
   font-size: 1.3rem;
   font-weight: bold;
