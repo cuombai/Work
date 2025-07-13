@@ -985,91 +985,125 @@ var ekit_config = {"ajaxurl":"https:\/\/blackberryuniforms.co.ke\/wp-admin\/admi
 <section class="recent-posts-section">
   <h2 class="slider-heading">Recent Posts</h2>
 
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
+  <div class="slider-wrapper">
+    <!-- Left Image Slider -->
+    <div class="swiper imageSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="https://blackberryuniforms.co.ke/wp-content/uploads/2024/06/BBU-Overall.jpg" alt="Safety Overalls" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://blackberryuniforms.co.ke/wp-content/uploads/2023/10/ezgif.com-webp-to-jpg.jpg" alt="Black Friday" />
+        </div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
 
-      <!-- Slide 1 -->
-      <div class="swiper-slide">
-        <div class="post-slide-content">
-          <div class="post-image">
-            <img src="https://blackberryuniforms.co.ke/wp-content/uploads/2024/06/BBU-Overall.jpg" alt="WHY WEAR SAFETY WORK OVERALLS?" />
+    <!-- Right Text Slider -->
+    <div class="swiper textSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="post-details">
+            <h3>Why Wear Safety Work Overalls?</h3>
+            <p class="meta">June 13, 2024 — Mandla Nyindodo</p>
+            <p class="caption">Safety workwear shields you daily. Learn how it empowers workers across industries.</p>
           </div>
-          <div class="post-info">
-            <h3 class="slide-title">Why Wear Safety Work Overalls?</h3>
-            <p class="slide-caption">Discover how safety workwear protects and empowers workers daily.</p>
+        </div>
+        <div class="swiper-slide">
+          <div class="post-details">
+            <h3>The Economic Significance of Black Friday</h3>
+            <p class="meta">Oct 26, 2023 — Mandla Nyindodo</p>
+            <p class="caption">Explore why Black Friday boosts retail and how it influences consumer trends.</p>
           </div>
         </div>
       </div>
-
-      <!-- Add more slides similarly -->
-
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
   </div>
+
   <style>
-	.post-slide-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 40px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+	.recent-posts-section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+  background: #f8f9fa;
 }
 
-.post-image img {
+.slider-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.slider-wrapper {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.imageSwiper, .textSwiper {
+  flex: 1;
+}
+
+.imageSwiper .swiper-slide img {
   width: 100px;
   height: 100px;
   object-fit: cover;
   border-radius: 8px;
-  margin-right: 40px;
+  margin: auto;
+  display: block;
 }
 
-.post-info {
+.post-details {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   text-align: left;
-  flex: 1;
 }
 
-.slide-title {
+.post-details h3 {
   font-size: 1.4rem;
-  font-weight: bold;
   margin-bottom: 10px;
   color: #333;
 }
 
-.slide-caption {
+.post-details .meta {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.post-details .caption {
   font-size: 1rem;
-  color: #666;
+  color: #555;
 }
 
   </style>
-  <script>
-	const swiper = new Swiper('.mySwiper', {
-  loop: true,
-  spaceBetween: 30,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-  },
-  breakpoints: {
-    640: { slidesPerView: 1 },
-    768: { slidesPerView: 1 },
-    1024: { slidesPerView: 1 }
-  }
-});
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const imageSwiper = new Swiper('.imageSwiper', {
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  });
 
-  </script>
+  const textSwiper = new Swiper('.textSwiper', {
+    loop: true,
+    allowTouchMove: false, // disable manual swipe here
+  });
+
+  // Synchronize the sliders
+  imageSwiper.on('slideChange', () => {
+    textSwiper.slideToLoop(imageSwiper.realIndex);
+  });
+</script>
+
 </section>
+
 
 
 </body>
