@@ -862,6 +862,9 @@ gtag("config", "GT-P85WK989");
 <script type="text/template" id="tmpl-unavailable-variation-template">
 	<p role="alert">Sorry, this product is unavailable. Please choose a different combination.</p>
 </script>
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+v
 <link rel="stylesheet" id="wc-blocks-style-css" href="https://blackberryuniforms.co.ke/wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks.css?ver=wc-9.9.5" type="text/css" media="all">
 <link rel="stylesheet" id="photoswipe-css" href="https://blackberryuniforms.co.ke/wp-content/plugins/woocommerce/assets/css/photoswipe/photoswipe.min.css?ver=9.9.5" type="text/css" media="all">
 <link rel="stylesheet" id="photoswipe-default-skin-css" href="https://blackberryuniforms.co.ke/wp-content/plugins/woocommerce/assets/css/photoswipe/default-skin/default-skin.min.css?ver=9.9.5" type="text/css" media="all">
@@ -1008,6 +1011,77 @@ var ekit_config = {"ajaxurl":"https:\/\/blackberryuniforms.co.ke\/wp-admin\/admi
     <!-- Pagination Dots (optional) -->
     <div class="swiper-pagination"></div>
   </div>
+  <style>
+  .recent-posts-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: #f8f9fa;
+    text-align: center;
+  }
+
+  .slider-heading {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #111;
+  }
+
+  .swiper {
+    width: 100%;
+    padding-bottom: 40px;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .slide-title {
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+  }
+</style>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper('.mySwiper', {
+    loop: true,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      640: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    }
+  });
+</script>
+
 </section>
 
 
