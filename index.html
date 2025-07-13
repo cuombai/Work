@@ -1109,23 +1109,41 @@ var ekit_config = {"ajaxurl":"https:\/\/blackberryuniforms.co.ke\/wp-admin\/admi
 
 </section>
 
-<!-- Floating Bot Button -->
-<div id="chat-bot" onclick="toggleBot()">
-  🤖
+
+<!-- <div id="chat-bot" onclick="toggleBot()">
+  <img src="images/bitmap.svg" alt="Chat Bot" />
 </div>
 
-<!-- Chat Window (Hidden by default) -->
+
 <div id="bot-window">
-  <p>Hi there! How can I help you today?</p>
-  <!-- You can enhance this with input fields or more interactivity -->
+  <div class="chat-header">Copilot Assistant</div>
+
+  <div class="chat-body">
+    <div class="bot-message">Hello, how can I help you today?</div>
+
+    <div class="choice-prompt">
+      <label for="user-choice">Select an option:</label>
+      <select id="user-choice" onchange="handleChoice()">
+        <option value="">--Choose--</option>
+        <option value="web-dev">💻 Web Dev Help</option>
+        <option value="docker">🐳 Docker Troubleshooting</option>
+        <option value="poetic-ui">💖 Romantic UI Design</option>
+        <option value="neural-networks">🧠 Neural Networks</option>
+      </select>
+    </div>
+
+    <div id="response-output" class="user-message"></div>
+  </div>
 </div>
+
+
 <style>
-	/* Floating bot icon */
+
 #chat-bot {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background-color: #25d366;
+  background-color: #ffffff;
   color: white;
   font-size: 24px;
   padding: 15px;
@@ -1135,29 +1153,103 @@ var ekit_config = {"ajaxurl":"https:\/\/blackberryuniforms.co.ke\/wp-admin\/admi
   z-index: 1000;
 }
 
-/* Chat window */
 #bot-window {
   position: fixed;
   bottom: 80px;
   left: 20px;
-  width: 250px;
-  background-color: white;
-  border: 1px solid #ccc;
+  width: 280px;
+  background-color: #e5ddd5;
   border-radius: 10px;
-  padding: 15px;
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-family: 'Segoe UI', sans-serif;
   display: none;
   z-index: 999;
 }
 
+
+.chat-header {
+  background-color: #075e54;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+}
+
+/* Chat Body */
+.chat-body {
+  padding: 10px;
+}
+
+/* Bot Message */
+.bot-message {
+  background-color: #dcf8c6;
+  padding: 8px 12px;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  max-width: 90%;
+}
+
+/* User Message (Response) */
+.user-message {
+  background-color: white;
+  padding: 8px 12px;
+  border-radius: 7px;
+  margin-top: 10px;
+  max-width: 90%;
+}
+
+/* Dropdown */
+.choice-prompt label {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+#user-choice {
+  width: 100%;
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+
+#chat-bot img {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
 </style>
 <script>
-	function toggleBot() {
+function toggleBot() {
   const botWindow = document.getElementById('bot-window');
   botWindow.style.display = botWindow.style.display === 'none' ? 'block' : 'none';
 }
 
-</script>
+function handleChoice() {
+  const choice = document.getElementById('user-choice').value;
+  const output = document.getElementById('response-output');
+
+  switch (choice) {
+    case 'web-dev':
+      output.textContent = "Sure! Let's tackle HTML/CSS layout or JS interactivity together.";
+      break;
+    case 'docker':
+      output.textContent = "Facing daemon errors or volume quirks? I’m ready to troubleshoot.";
+      break;
+    case 'poetic-ui':
+      output.textContent = "Let’s add emotion and charm to your design—like love in code.";
+      break;
+    case 'neural-networks':
+      output.textContent = "We’ll train your thoughts into a model—Python and precision.";
+      break;
+    default:
+      output.textContent = "";
+  }
+}
+
+
+</script> -->
 
 </body>
 <footer id="colophon" class="site-footer site-footer-two ">
