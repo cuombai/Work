@@ -525,6 +525,54 @@ gtag("config", "GT-P85WK989");
 					</div>
 		</div>
 					</div>
+					<style>
+						.elementor-column {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.elementor-column:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.elementor-widget-image img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.elementor-widget-image img:hover {
+  transform: scale(1.05);
+}
+
+.elementor-heading-title a {
+  text-decoration: none;
+  color: #005aa7;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.elementor-widget-text-editor p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .elementor-column {
+    margin-bottom: 20px;
+  }
+}
+
+					</style>
 		</section>
 		<!--Visit our shop section -->
 			<section class="shop-location-section">
@@ -1027,6 +1075,19 @@ var ekit_config = {"ajaxurl":"https:\/\/blackberryuniforms.co.ke\/wp-admin\/admi
   </div>
 
   <style>
+
+@media screen and (max-width: 768px) {
+  .imageSwiper,
+  .textSwiper {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .slider-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
 .recent-posts-section {
   max-width: 1000px;
   margin: 0 auto;
@@ -1042,27 +1103,22 @@ var ekit_config = {"ajaxurl":"https:\/\/blackberryuniforms.co.ke\/wp-admin\/admi
 
 .slider-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 40px;
   flex-wrap: wrap;
   width: 100%;
 }
-.imageSwiper {
-  flex: 0 1 55%;
-}
-
+.imageSwiper,
 .textSwiper {
-  flex: 0 1 35%;
+  flex: 0 0 40%;
+  max-width: 40%;
 }
 .imageSwiper .swiper-slide img {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 8px;
-  margin: 0 auto;
 }
-
 .post-details {
   background: white;
   border-radius: 10px;
@@ -1110,146 +1166,6 @@ var ekit_config = {"ajaxurl":"https:\/\/blackberryuniforms.co.ke\/wp-admin\/admi
 </section>
 
 
-<!-- <div id="chat-bot" onclick="toggleBot()">
-  <img src="images/bitmap.svg" alt="Chat Bot" />
-</div>
-
-
-<div id="bot-window">
-  <div class="chat-header">Copilot Assistant</div>
-
-  <div class="chat-body">
-    <div class="bot-message">Hello, how can I help you today?</div>
-
-    <div class="choice-prompt">
-      <label for="user-choice">Select an option:</label>
-      <select id="user-choice" onchange="handleChoice()">
-        <option value="">--Choose--</option>
-        <option value="web-dev">💻 Web Dev Help</option>
-        <option value="docker">🐳 Docker Troubleshooting</option>
-        <option value="poetic-ui">💖 Romantic UI Design</option>
-        <option value="neural-networks">🧠 Neural Networks</option>
-      </select>
-    </div>
-
-    <div id="response-output" class="user-message"></div>
-  </div>
-</div>
-
-
-<style>
-
-#chat-bot {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background-color: #ffffff;
-  color: white;
-  font-size: 24px;
-  padding: 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-}
-
-#bot-window {
-  position: fixed;
-  bottom: 80px;
-  left: 20px;
-  width: 280px;
-  background-color: #e5ddd5;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  font-family: 'Segoe UI', sans-serif;
-  display: none;
-  z-index: 999;
-}
-
-
-.chat-header {
-  background-color: #075e54;
-  color: white;
-  padding: 10px;
-  font-weight: bold;
-}
-
-/* Chat Body */
-.chat-body {
-  padding: 10px;
-}
-
-/* Bot Message */
-.bot-message {
-  background-color: #dcf8c6;
-  padding: 8px 12px;
-  border-radius: 7px;
-  margin-bottom: 10px;
-  max-width: 90%;
-}
-
-/* User Message (Response) */
-.user-message {
-  background-color: white;
-  padding: 8px 12px;
-  border-radius: 7px;
-  margin-top: 10px;
-  max-width: 90%;
-}
-
-/* Dropdown */
-.choice-prompt label {
-  display: block;
-  margin-top: 8px;
-  margin-bottom: 4px;
-}
-
-#user-choice {
-  width: 100%;
-  padding: 6px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-
-#chat-bot img {
-  width: 40px;
-  height: 40px;
-  display: block;
-}
-
-</style>
-<script>
-function toggleBot() {
-  const botWindow = document.getElementById('bot-window');
-  botWindow.style.display = botWindow.style.display === 'none' ? 'block' : 'none';
-}
-
-function handleChoice() {
-  const choice = document.getElementById('user-choice').value;
-  const output = document.getElementById('response-output');
-
-  switch (choice) {
-    case 'web-dev':
-      output.textContent = "Sure! Let's tackle HTML/CSS layout or JS interactivity together.";
-      break;
-    case 'docker':
-      output.textContent = "Facing daemon errors or volume quirks? I’m ready to troubleshoot.";
-      break;
-    case 'poetic-ui':
-      output.textContent = "Let’s add emotion and charm to your design—like love in code.";
-      break;
-    case 'neural-networks':
-      output.textContent = "We’ll train your thoughts into a model—Python and precision.";
-      break;
-    default:
-      output.textContent = "";
-  }
-}
-
-
-</script> -->
 
 </body>
 <footer id="colophon" class="site-footer site-footer-two ">
@@ -1353,8 +1269,7 @@ function handleChoice() {
 			<div class="col-lg-6">
 				
 <div class="site-info">
-	Copyright © 2025 Acryliz Investment Limited. Powered by	<a href="https://wa.me/254721339682" target="_blank" rel="noopener">
-		GodTek LIMITED	</a>
+	Copyright © 2025 Acryliz Investment Limited. Powered by	<a href="https://wa.me/254721339682" target="_blank" rel="noopener">GodTek LIMITED	</a>
 </div><!-- .site-info -->			</div>
 			<div class="col-lg-3">
 							</div>
